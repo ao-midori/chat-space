@@ -26,3 +26,5 @@ This database has 3 tables below.
 |id|integer|-|
 |body|text|-|
 |image|string|-|
+|user_id|references|Foreign_Key|
+|chatgroup_id|references|Foreign_Key|
