@@ -35,8 +35,8 @@ has_many :users, through: :user_groups
 |id|integer|-|
 |body|text|-|
 |image|string|-|
-|user_id|references|Foreign_Key|
-|group_id|references|Foreign_Key|
+|user_id|references|Foreign_Key, Not-Null|
+|group_id|references|Foreign_Key, Not-Null|
 
 belongs_to :user  
 belongs_to :group
@@ -47,8 +47,8 @@ belongs_to :group
 |column|type|remark|
 |:---:|:---:|:---:|
 |id|integer|-|
-|user_id|references|Foreign_Key|
-|group_id|references|Foreign_Key|
+|user_id|references|Foreign_Key, Not-Null|
+|group_id|references|Foreign_Key, Not-Null|
 
 belongs_to :user  
 belongs_to :group
