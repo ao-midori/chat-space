@@ -2,18 +2,20 @@
 
 This database has 3 tables below.
 
-**users table**  
+**users table**
 
 |column|type|remark|
 |:---:|:---:|:---:|
+|id|integer|-|
 |name|string|Index, Unique|
 |email|string|Unique|
 |password|string|Not-Null|
 
-**chatgroups table**　　
+**chatgroups table**
 
 |column|type|remark|
 |:---:|:---:|:---:|
+|id|integer|-|
 |name|string|Not-Null|
 |user_id|references|Foreign_Key|
 
@@ -21,5 +23,6 @@ This database has 3 tables below.
 
 |column|type|remark|
 |:---:|:---:|:---:|
+|id|integer|-|
 |body|text|-|
 |image|string|-|
