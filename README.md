@@ -17,7 +17,7 @@ This database has 3 tables below.
 |:---:|:---:|:---:|
 |id|integer|-|
 |name|string|Not-Null|
-|user_id|references|Foreign_Key|
+
 
 **messages table**
 
