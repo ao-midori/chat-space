@@ -6,7 +6,7 @@ This database has 3 tables below.
 
 |column|type|remark|
 |:---:|:---:|:---:|
-|user_name|string|Index, Unique|
+|name|string|Index, Unique|
 |email|string|Unique|
 |password|string|Not-Null|
 
@@ -14,7 +14,7 @@ This database has 3 tables below.
 
 |column|type|remark|
 |:---:|:---:|:---:|
-|group_name|string|Not-Null|
+|name|string|Not-Null|
 |user_id|references|Foreign_Key|
 
 **messages table**
