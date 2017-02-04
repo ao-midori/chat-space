@@ -11,7 +11,7 @@ This database has 4 tables below.
 |email|string|Unique|
 |password|string|Not-Null|
 
-has_many :messages
+has_many :messages  
 has_many :chatgroups, through: :user_chatgroups
 
 
@@ -22,7 +22,7 @@ has_many :chatgroups, through: :user_chatgroups
 |id|integer|-|
 |name|string|Not-Null|
 
-has_many :messages
+has_many :messages  
 has_many :users, through: :user_chatgroups
 
 
@@ -36,7 +36,7 @@ has_many :users, through: :user_chatgroups
 |user_id|references|Foreign_Key|
 |chatgroup_id|references|Foreign_Key|
 
-belongs_to :users
+belongs_to :users  
 belongs_to :chatgroups
 
 
@@ -48,7 +48,7 @@ belongs_to :chatgroups
 |user_id|references|Foreign_Key|
 |chatgroup_id|references|Foreign_Key|
 
-belongs_to :user
+belongs_to :user  
 belongs_to :chatgroup
 
 
