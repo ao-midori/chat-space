@@ -36,8 +36,8 @@ has_many :users, through: :user_chatgroups
 |user_id|references|Foreign_Key|
 |chatgroup_id|references|Foreign_Key|
 
-belongs_to :users  
-belongs_to :chatgroups
+belongs_to :user  
+belongs_to :chatgroup
 
 
 **user_chatgroups table**
