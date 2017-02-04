@@ -12,10 +12,10 @@ This database has 4 tables below.
 |password|string|Not-Null|
 
 has_many :messages  
-has_many :chatgroups, through: :user_chatgroups
+has_many :groups, through: :user_groups
 
 
-**chatgroups table**
+**groups table**
 
 |column|type|remark|
 |:---:|:---:|:---:|
@@ -23,7 +23,7 @@ has_many :chatgroups, through: :user_chatgroups
 |name|string|Not-Null|
 
 has_many :messages  
-has_many :users, through: :user_chatgroups
+has_many :users, through: :user_groups
 
 
 **messages table**
@@ -34,22 +34,22 @@ has_many :users, through: :user_chatgroups
 |body|text|-|
 |image|string|-|
 |user_id|references|Foreign_Key|
-|chatgroup_id|references|Foreign_Key|
+|group_id|references|Foreign_Key|
 
 belongs_to :user  
-belongs_to :chatgroup
+belongs_to :group
 
 
-**user_chatgroups table**
+**user_groups table**
 
 |column|type|remark|
 |:---:|:---:|:---:|
 |id|integer|-|
 |user_id|references|Foreign_Key|
-|chatgroup_id|references|Foreign_Key|
+|group_id|references|Foreign_Key|
 
 belongs_to :user  
-belongs_to :chatgroup
+belongs_to :group
 
 
 
