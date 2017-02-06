@@ -45,5 +45,6 @@ group :development do
   gem 'spring'
 end
 
-gem "haml"
+gem 'haml'
+gem 'erb2haml'
 
