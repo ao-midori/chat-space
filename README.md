@@ -12,8 +12,8 @@ This database has 4 tables below.
 |password|string|Not-Null|
 
 has_many :messages  
-has_many :user_groups  
-has_many :groups, through: :user_groups
+has_many :group_users  
+has_many :groups, through: :group_users
 
 
 **groups table**
@@ -24,8 +24,8 @@ has_many :groups, through: :user_groups
 |name|string|Not-Null|
 
 has_many :messages  
-has_many :user_groups  
-has_many :users, through: :user_groups
+has_many :group_users  
+has_many :users, through: :group_users
 
 
 **messages table**
@@ -42,7 +42,7 @@ belongs_to :user
 belongs_to :group
 
 
-**user_groups table**
+**group_users table**
 
 |column|type|remark|
 |:---:|:---:|:---:|
