@@ -1,2 +1,27 @@
-%p
-  test
+%div.top-popout
+  %p チャットグループが作成されました。
+
+%div.left-content
+  %div.user-name
+    %p
+      ユーザー名
+  %div.group
+    %p.group#group__name
+      sample グループ
+    %p.group#group__message
+      recent message
+
+%div.right-content
+  %div.group-info
+    %p.group-info#group-name
+      sample グループ名
+    %p.group-info#group-member
+  %div.message-box
+    %div.message
+      %p.message#message__sender
+        送信者
+      %p.message#message__content
+        送ったメッセージ
+  %form#text-form
+    %input{ type: "text", id: "text", placeholder: "type a message" }
+    %input{ type: "submit", id: "submit", value: "Send" }

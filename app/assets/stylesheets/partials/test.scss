@@ -1,0 +1,59 @@
+// Place all the styles related to the test controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.top-popout {
+  background-color: #38AEF0;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.left-content {
+    color: #FFFFFF;
+    float: left;
+    width: 300px;
+  .user-name {
+    background-color: #253141;
+    font-size: 16px;
+    font-weight: bold;
+    height: 96px;
+    p {
+      padding: auto, 20px;
+      }
+    }
+
+  .group {
+      background-color: #2f3e51;
+    #group__name {
+      font-size: 15px;
+      padding-top: 20px;
+      padding-bottom: 5px;
+    }
+    #group__message {
+      font-size: 11px;
+      padding-bottom: 40px;
+    }
+  }
+}
+
+
+.rigth-content {
+  background-color: #AAAAAA;
+  float: right;
+  min-width: 100px;
+  width: 300px;
+  .group-info {
+    color: red;
+    #group-name {
+      color: #333333;
+      font-size: 20px;
+      padding-top: 35px;
+    }
+  }
+
+  #text-form {
+    position: absolute;
+    bottom: 0;
+  }
+}
