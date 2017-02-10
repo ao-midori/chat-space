@@ -2,58 +2,167 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.top-popout {
+header {
   background-color: #38AEF0;
   color: #FFFFFF;
   text-align: center;
+  height: 30px;
+  width: 100vw;
+  min-width: 1200px;
 }
 
-.left-content {
+.main-container {
+  height: 100vh;
+  width: 100vw;
+  min-height: 700px;
+  min-width: 1200px;
+
+  .left-container {
+    background-color: #2f3e51;
     color: #FFFFFF;
-    float: left;
+    height: 100vh;
     width: 300px;
-  .user-name {
-    background-color: #253141;
-    font-size: 16px;
-    font-weight: bold;
-    height: 96px;
-    p {
-      padding: auto, 20px;
+    min-height: 700px;
+    float: left;
+
+    #user-info-box {
+      background-color: #253141;
+      font-size: 16px;
+      font-weight: bold;
+      height: 110px;
+      padding: 0 20px;
+      position: relative;
+      
+      &__name {
+        position: absolute;
+        top: 50%;
+        margin: -0.5em 0;
+      }
+      
+      &__icon-wrapper {
+      position: absolute;
+      top: 50%;
+      margin: -0.5em 20px -0.5em 210px;
       }
     }
 
-  .group {
+    #group-box {
       background-color: #2f3e51;
-    #group__name {
-      font-size: 15px;
-      padding-top: 20px;
-      padding-bottom: 5px;
+      padding: 20px;
+
+      &__name {
+        font-size: 15px;
+        padding-bottom: 5px;
+      }
+
+      &__message {
+        font-size: 11px;
+      }
     }
-    #group__message {
-      font-size: 11px;
-      padding-bottom: 40px;
+  }
+
+  .right-container {
+    background-color: #AAAAAA;
+    height: 100vh;
+    width: calc(100vw - 300px);
+    min-height: 700px;
+    min-width: 900px;
+    float: right;
+    position: relative;
+    
+    #group-info-box {
+      background-color: white;
+      border-bottom: solid #eeeeee;
+      height: 110px;
+      padding: 0 40px;
+    
+      &__name {
+        color: #333333;
+        font-size: 20px;
+        padding-top: 35px;
+      }
+    
+      &__member {
+        color: #999999;
+        font-size: 12px;
+        padding-top: 15px;
+        padding-bottom: 10px;
+      }
+    
+      &__edit-btn {
+        background-color: #ffffff;
+        border : solid #38AEF0 2px;
+        color: #38AEF0;
+        height: 40px;
+        padding: 0 20px;
+        text-align: center;
+        position: absolute;
+        top: 28px;
+        right: 40px;
+      }
+    }
+    #message-box {
+      padding: 0 40px;
+      &__sender {
+        color: #434A54;
+        font-size: 16px;
+        font-weight: bold;
+        padding-top: 46px;
+      }
+      &__datetime {
+        color: #999999;
+        font-size: 12px;
+        padding-left: 10px;
+      }
+      &__content {
+        color: #434A54;
+        font-size: 14px;
+        padding-top: 10px;
+        padding-bottom: 40px;
+      }
+    }
+
+
+    #texting-box {
+      background-color: lightgray;
+      height: 90px;
+      width: calc(100vw - 300px);
+      min-width: 900px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    
+      &__input {
+        border-style: none;
+        font-size: 16px;
+        padding-left: 10px;
+        height: 50px;
+        width: calc(100vw - 495px);
+        min-width: 705px;
+        position: absolute;
+        bottom: 20px;
+        left: 40px;
+      }
+    
+      &__photo-icon {
+        position: absolute;
+        bottom: 35px;
+        right: 155px;
+      }
+      &__send-btn {
+        background-color: #38AEF0;
+        border-style: none;
+        color: #ffffff;
+        height: 50px;
+        width: 90px;
+        padding: 0 auto;
+        text-align: center;
+        position: absolute;
+        bottom: 20px;
+        right: 40px;
+      }
     }
   }
 }
 
-
-.rigth-content {
-  background-color: #AAAAAA;
-  float: right;
-  min-width: 100px;
-  width: 300px;
-  .group-info {
-    color: red;
-    #group-name {
-      color: #333333;
-      font-size: 20px;
-      padding-top: 35px;
-    }
-  }
-
-  #text-form {
-    position: absolute;
-    bottom: 0;
-  }
-}
