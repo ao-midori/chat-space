@@ -2,13 +2,3 @@ $mainBlue: #38AEF0;
 $left-base: #2f3e51;
 $right-base: #AAAAAA;
 $right-subinfo: #999999;
-
-@mixin ref-height() {
-  height: 100vh;
-  min-height: 700px;
-}
-
-@mixin ref-width() {
-  width: 100vw;
-  min-width: 1200px;
-}

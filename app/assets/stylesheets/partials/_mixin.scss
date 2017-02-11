@@ -1,0 +1,9 @@
+@mixin ref-height() {
+  height: 100vh;
+  min-height: 700px;
+}
+
+@mixin ref-width() {
+  width: 100vw;
+  min-width: 1200px;
+}
