@@ -1,0 +1,44 @@
+%header.top-popout
+  %p
+    チャットグループが作成されました。
+.main-container
+  .left-container
+    #user-info-box
+      %p#user-info-box__name
+        ユーザー名
+      #user-info-box__icon-wrapper
+        %i.fa.fa-edit.fa-lg
+        %i.fa.fa-cog.fa-lg
+
+    #group-box
+      %p#group-box__name
+        sample グループ
+      %p#group-box__message
+        recent message
+
+    #group-box
+      %p#group-box__name
+        sample グループ
+      %p#group-box__message
+        recent message
+
+  .right-container
+    #group-info-box
+      %p#group-info-box__name
+        sample グループ名
+      %p#group-info-box__member
+        aaaaaaaa, bbbbbbb
+      %input#group-info-box__edit-btn{ type: "submit", value: "Edit" }
+
+    #message-box
+      %p#message-box__sender
+        送信者
+        %span#message-box__datetime
+          yyyy/mm/dd hh:mm:ss
+      %p#message-box__content
+        送ったメッセージ
+
+    #texting-box
+      %input#texting-box__input{ type: "text", placeholder: "type a message", rows: "1", cols: "20" }
+      %i.fa.fa-picture-o#texting-box__photo-icon
+      %input#texting-box__send-btn{ type: "submit", value: "Send" }
