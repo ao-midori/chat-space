@@ -18,7 +18,7 @@ header {
 
   .left-container {
     @include ref-height();
-    background-color: #2f3e51;
+    background-color: $left-base;
     color: #ffffff;
     width: 300px;
     float: left;
@@ -45,7 +45,7 @@ header {
     }
 
     #group-box {
-      background-color: #2f3e51;
+      background-color: $left-base;
       padding: 20px;
 
       &__name {
