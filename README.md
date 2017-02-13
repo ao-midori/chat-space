@@ -7,8 +7,8 @@ This database has 4 tables below.
 |column|type|remark|
 |:---:|:---:|:---:|
 |id|integer|-|
-|name|string|Unique, Index|
-|email|string|Unique, Index|
+|name|string|Unique, Index, Not-Null|
+|email|string|Unique, Index, Not-Null|
 |password|string|Not-Null|
 
 has_many :messages  
