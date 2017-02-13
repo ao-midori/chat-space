@@ -8,8 +8,8 @@
         ユーザー名
       #user-info-box__icon-wrapper
         %i.fa.fa-edit.fa-lg
-        %i.fa.fa-cog.fa-lg
-
+        = link_to edit_user_registration_path, method: :get do
+          %i.fa.fa-cog.fa-lg
     #group-box
       %p#group-box__name
         sample グループ
