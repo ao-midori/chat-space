@@ -5,7 +5,7 @@
   .left-container
     #user-info-box
       %p#user-info-box__name
-        ユーザー名
+        = current_user.name
       #user-info-box__icon-wrapper
         %i.fa.fa-edit.fa-lg
         = link_to edit_user_registration_path, method: :get do
