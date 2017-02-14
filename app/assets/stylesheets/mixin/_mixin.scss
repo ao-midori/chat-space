@@ -7,3 +7,11 @@
   width: 100vw;
   min-width: 1200px;
 }
+
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
