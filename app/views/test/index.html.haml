@@ -7,7 +7,8 @@
       %p#user-info-box__name
         = current_user.name
       #user-info-box__icon-wrapper
-        %i.fa.fa-edit.fa-lg
+        = link_to new_group_path, method: :get do
+          %i.fa.fa-edit.fa-lg
         = link_to edit_user_registration_path, method: :get do
           %i.fa.fa-cog.fa-lg
     #group-box
@@ -28,7 +29,8 @@
         sample グループ名
       %p#group-info-box__member
         aaaaaaaa, bbbbbbb
-      %input#group-info-box__edit-btn{ type: "submit", value: "Edit" }
+      = form_tag('/groups/:id/edit', method: :get) do
+        %input#group-info-box__edit-btn{ type: "submit", value: "Edit" }
 
     #message-box
       %p#message-box__sender
