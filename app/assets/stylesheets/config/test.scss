@@ -5,7 +5,7 @@
 header {
   @include ref-width();
   background-color: $mainBlue;
-  color: #ffffff;
+  color: $white;
   text-align: center;
   height: 30px;
 }
@@ -17,7 +17,7 @@ header {
   .left-container {
     @include ref-height();
     background-color: $left-base;
-    color: #ffffff;
+    color: $white;
     width: 300px;
     float: left;
 
@@ -151,7 +151,7 @@ header {
       &__send-btn {
         background-color: $mainBlue;
         border-style: none;
-        color: #ffffff;
+        color: #white;
         height: 50px;
         width: 90px;
         padding: 0 auto;
