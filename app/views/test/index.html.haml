@@ -29,7 +29,7 @@
         sample グループ名
       %p#group-info-box__member
         aaaaaaaa, bbbbbbb
-      = form_tag('/groups/:id/edit', method: :get) do
+      = link_to '/groups/:id/edit' do
         %input#group-info-box__edit-btn{ type: "submit", value: "Edit" }
 
     #message-box
