@@ -8,7 +8,7 @@ before_action :authenticate_user!
   def create
     @group = Group.new(group_params)
     if @group.save
-      redirect_to root_path, notice: "チャットグループが作成されました。"
+      redirect_to root_path
     else
       render 'new'
     end

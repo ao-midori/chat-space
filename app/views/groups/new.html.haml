@@ -3,9 +3,10 @@
   - if @group.errors.any?
     .chat-group-form__errors
       %h2
+        =pluralize(@group.errors.count, "error prohibited this group from being saved:")
       %ul
-      - @group.errors.full_messages.each do |msg|
-        %li=msg
+        - @group.errors.full_messages.each do |msg|
+          %li=msg
   #new_chat_group.new_chat_group
   = form_for(@group) do |f|
 
