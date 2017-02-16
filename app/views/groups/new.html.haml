@@ -1,12 +1,11 @@
 .chat-group-form
   %h1 新規チャットグループ
-  %form#new_chat_group.new_chat_group{ accept: { charset: "UTF-8" }, action: "/chat_groups", method: "post"}
-    %input{ name: "utf8", type: "hidden", value: "✓"}/
-    %input{ name: "authenticity_token", type: "hidden", value: "AxFKlYEhD6eqX1PiZoTYQDANtKvgcFSXZQXHt5hyTl55/U/CHC5rtPavrcu2za65riz4tekZEy56vP6kEb2wYA==" }/
+  #new_chat_group.new_chat_group
+  = form_for(@group) do |f|
 
-    = render partial: 'group'
+    = render partial: 'group', locals: { f: f }
 
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
-        %input.chat-group-form__action-btn{ data:{ disable:{ with: "Save" } }, name: "commit", type: "submit", value: "Save"}/
+        = f.submit value: "Save", class: 'btn chat-group-form__action-btn'
