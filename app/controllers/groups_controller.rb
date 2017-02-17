@@ -1,6 +1,10 @@
 class GroupsController < ApplicationController
 before_action :authenticate_user!
 
+  def show_one_group
+    @group = Group.find(params[:id])
+  end
+
   def new
     @group = Group.new
   end
@@ -15,11 +19,11 @@ before_action :authenticate_user!
   end
 
   def edit
-    @group = Group.find(params[:id])
+    show_one_group
   end
 
   def update
-    @group = Group.find(params[:id])
+    show_one_group
     @group.update(group_params)
     if @group.save
       redirect_to root_path
