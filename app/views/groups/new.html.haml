@@ -11,8 +11,3 @@
   = form_for(@group) do |f|
 
     = render partial: 'group', locals: { f: f }
-
-    .chat-group-form__field.clearfix
-      .chat-group-form__field--left
-      .chat-group-form__field--right
-        = f.submit value: "Save", class: 'btn chat-group-form__action-btn'
