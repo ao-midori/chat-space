@@ -1,12 +1,13 @@
 .chat-group-form
   %h1 新規チャットグループ
-  %form#new_chat_group.new_chat_group{ accept: { charset: "UTF-8" }, action: "/chat_groups", method: "post"}
-    %input{ name: "utf8", type: "hidden", value: "✓"}/
-    %input{ name: "authenticity_token", type: "hidden", value: "AxFKlYEhD6eqX1PiZoTYQDANtKvgcFSXZQXHt5hyTl55/U/CHC5rtPavrcu2za65riz4tekZEy56vP6kEb2wYA==" }/
+  - if @group.errors.any?
+    .chat-group-form__errors
+      %h2
+        =pluralize(@group.errors.count, "error prohibited this group from being saved:")
+      %ul
+        - @group.errors.full_messages.each do |msg|
+          %li=msg
+  #new_chat_group.new_chat_group
+  = form_for(@group) do |f|
 
-    = render partial: 'group'
-
-    .chat-group-form__field.clearfix
-      .chat-group-form__field--left
-      .chat-group-form__field--right
-        %input.chat-group-form__action-btn{ data:{ disable:{ with: "Save" } }, name: "commit", type: "submit", value: "Save"}/
+    = render partial: 'group', locals: { f: f }
