@@ -14,7 +14,7 @@ before_action :authenticate_user!
     if @group.save
       redirect_to root_path
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -24,11 +24,10 @@ before_action :authenticate_user!
 
   def update
     show_one_group
-    @group.update(group_params)
-    if @group.save
+    if @group.update(group_params)
       redirect_to root_path
     else
-      render action: './edit'
+      render :edit
     end
   end
 
