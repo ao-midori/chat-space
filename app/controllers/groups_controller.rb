@@ -1,9 +1,6 @@
 class GroupsController < ApplicationController
 before_action :authenticate_user!
-
-  def show_one_group
-    @group = Group.find(params[:id])
-  end
+before_action :set_group, only: [:edit, :update]
 
   def new
     @group = Group.new
@@ -19,11 +16,9 @@ before_action :authenticate_user!
   end
 
   def edit
-    show_one_group
   end
 
   def update
-    show_one_group
     if @group.update(group_params)
       redirect_to root_path
     else
@@ -34,6 +29,10 @@ before_action :authenticate_user!
   private
   def group_params
     params.require(:group).permit(:name)
+  end
+
+  def set_group
+    @group = Group.find(params[:id])
   end
 
 end
