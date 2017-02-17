@@ -7,7 +7,7 @@
       %ul
         - @group.errors.full_messages.each do |msg|
           %li=msg
-  #edit_chat_group_22.edit_chat_group
+  #edit_chat_group.edit_chat_group
   = form_for(@group) do |f|
 
     = render partial: 'group', locals: { f: f }
