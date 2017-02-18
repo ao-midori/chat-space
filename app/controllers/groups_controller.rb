@@ -9,9 +9,9 @@ before_action :set_group, only: [:edit, :update]
   def create
     @group = Group.new(group_user_params)
     if @group.save
-      redirect_to root_path
+      redirect_to root_path, notice: "新しいチャットグループが作成されました。"
     else
-      render :new
+      render :new, notice: "グループ作成に失敗しました。"
     end
   end
 
