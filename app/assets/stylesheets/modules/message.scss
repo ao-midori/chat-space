@@ -1,6 +1,9 @@
-#notice {
-  @include ref-width;
+#alert {
+  @include flash-message;
   background-color: #ea4e31;
-  color: #fff;
-  text-align: center;
+}
+
+#notice {
+  @include flash-message;
+  background-color: $mainBlue;
 }

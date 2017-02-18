@@ -11,7 +11,8 @@ before_action :set_group, only: [:edit, :update]
     if @group.save
       redirect_to root_path, notice: "新しいチャットグループが作成されました。"
     else
-      render :new, notice: "グループ作成に失敗しました。"
+      flash.now[:alert] = "グループ作成に失敗しました。"
+      render :new
     end
   end
 
