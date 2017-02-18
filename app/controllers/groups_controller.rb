@@ -7,7 +7,7 @@ before_action :set_group, only: [:edit, :update]
   end
 
   def create
-    @group = Group.new(group_params)
+    @group = Group.new(group_user_params)
     if @group.save
       redirect_to root_path
     else
@@ -29,6 +29,10 @@ before_action :set_group, only: [:edit, :update]
   private
   def group_params
     params.require(:group).permit(:name)
+  end
+
+  def group_user_params
+    params.require(:group).permit(:name, :user_ids => [])
   end
 
   def set_group
