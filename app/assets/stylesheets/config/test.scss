@@ -2,14 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-header {
-  @include ref-width();
-  background-color: $mainBlue;
-  color: $white;
-  text-align: center;
-  height: 30px;
-}
-
 .main-container {
   @include ref-height();
   @include ref-width();
