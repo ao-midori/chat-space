@@ -20,18 +20,15 @@ before_action :set_group, only: [:edit, :update]
   end
 
   def update
-    if @group.update(group_params)
-      redirect_to root_path
+    if @group.update(group_user_params)
+      redirect_to root_path, notice: "チャットグループが編集されました。"
     else
+      flash.now[:alert] = "グループ編集に失敗しました。"
       render :edit
     end
   end
 
   private
-  def group_params
-    params.require(:group).permit(:name)
-  end
-
   def group_user_params
     params.require(:group).permit(:name, :user_ids => [])
   end
