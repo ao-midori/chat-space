@@ -4,14 +4,13 @@
   .right-container
     #group-info-box
       %p#group-info-box__name
-        = Group.find(params[:group_id]).name
+        = @group.name
       %p#group-info-box__member
-        Members:
-        - @users = Group.find(params[:group_id]).users.map(&:name)
-        - @users.each do |user|
-          = user
-      = link_to '/groups/:id/edit' do
-        %input#group-info-box__edit-btn{ type: "submit", value: "Edit" }
+        Members: 
+        = @users.map(&:name).join(" ")
+      = link_to edit_group_path(@group) do
+        #group-info-box__edit-btn
+          Edit
 
     #message-box
     - @messages.each do |message|
@@ -23,7 +22,7 @@
         = message.body
 
     #texting-box
-      = form_for @message, url: { action: 'create' } do |f|
+      = form_for ([@group, @message])do |f|
         = f.text_field :body, placeholder: "type a message", size: "20", id: "texting-box__input"
         %i.fa.fa-picture-o#texting-box__photo-icon
         = f.submit value: "Send", id: "texting-box__send-btn"
