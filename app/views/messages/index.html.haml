@@ -1,23 +1,6 @@
 .main-container
   .left-container
-    #user-info-box
-      %p#user-info-box__name
-        = current_user.name
-      #user-info-box__icon-wrapper
-        = link_to new_group_path do
-          %i.fa.fa-edit.fa-lg
-        = link_to edit_user_registration_path do
-          %i.fa.fa-cog.fa-lg
-    - current_user.groups.each do |group|
-      #group-box
-        = link_to group_messages_path(group_id: group[:id]) do
-          #group-box__name
-            = group.name
-          #group-box__message
-            - if group.messages.last.present?
-              = group.messages.last.body
-            - else
-
+    = render partial: 'shared/leftbar'
   .right-container
     #group-info-box
       %p#group-info-box__name
@@ -40,7 +23,7 @@
         = message.body
 
     #texting-box
-      = form_for @message, :url => {:action => :create}  do |f|
+      = form_for @message, url: { action: 'create' } do |f|
         = f.text_field :body, placeholder: "type a message", size: "20", id: "texting-box__input"
         %i.fa.fa-picture-o#texting-box__photo-icon
         = f.submit value: "Send", id: "texting-box__send-btn"
