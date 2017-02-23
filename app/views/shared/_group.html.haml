@@ -1,0 +1,6 @@
+#group-box
+  = link_to group_messages_path(group.id) do
+    #group-box__name
+      = group.name
+    #group-box__message
+      = group.messages.last.body.presence || ""
