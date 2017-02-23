@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to group_messages_path
     else
-      redirect_to group_messages_path, flash: { alert: "本文がないため、送信できませんでした。"}
+      redirect_to group_messages_path, flash: { alert: "本文がないか、250文字以上のため送信できませんでした。"}
     end
   end
 
