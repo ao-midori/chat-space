@@ -1,4 +1,13 @@
 .main-container
   .left-container
-    = render partial: 'shared/leftbar'
+    #user-info-box
+      %p#user-info-box__name
+        = current_user.name
+      #user-info-box__icon-wrapper
+        = link_to new_group_path do
+          %i.fa.fa-edit.fa-lg
+        = link_to edit_user_registration_path do
+          %i.fa.fa-cog.fa-lg
+    = render partial: 'shared/grp', collection: current_user.groups
+
   .right-container
