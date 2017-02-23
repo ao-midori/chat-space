@@ -1,0 +1,31 @@
+.main-container
+  .left-container
+    #user-info-box
+      %p#user-info-box__name
+        = current_user.name
+      #user-info-box__icon-wrapper
+        = link_to new_group_path do
+          %i.fa.fa-edit.fa-lg
+        = link_to edit_user_registration_path do
+          %i.fa.fa-cog.fa-lg
+    = render partial: 'shared/group', collection: current_user.groups
+
+  .right-container
+    #group-info-box
+      %p#group-info-box__name
+        = @group.name
+      %p#group-info-box__member
+        Members: 
+        = @users.map(&:name).join(" ")
+      = link_to edit_group_path(@group) do
+        #group-info-box__edit-btn
+          Edit
+
+    #message-box
+      = render partial: 'msg', collection: @messages
+
+    #texting-box
+      = form_for ([@group, @message])do |f|
+        = f.text_field :body, placeholder: "type a message", size: "20", id: "texting-box__input"
+        %i.fa.fa-picture-o#texting-box__photo-icon
+        = f.submit value: "Send", id: "texting-box__send-btn"

@@ -32,7 +32,7 @@
       top: 50%;
       margin: -0.5em 20px -0.5em 210px;
         .fa {
-          color: white;
+          color: $white;
         }
       }
     }
@@ -45,10 +45,14 @@
         font-size: 15px;
         padding-bottom: 5px;
       }
-
       &__message {
         font-size: 11px;
       }
+    }
+
+    #group-box a {
+      color: $white;
+      text-decoration: none !important;
     }
   }
 
@@ -85,6 +89,7 @@
         height: 40px;
         padding: 0 20px;
         text-align: center;
+        line-height: 40px;
         position: absolute;
         top: 28px;
         right: 40px;
@@ -92,13 +97,11 @@
     }
 
     #message-box {
-      padding: 0 40px;
-      color: #434A54;
 
       &__sender {
         font-size: 16px;
         font-weight: bold;
-        padding-top: 46px;
+        padding: 40px 40px 0;
       }
 
       &__datetime {
@@ -109,8 +112,7 @@
 
       &__content {
         font-size: 14px;
-        padding-top: 10px;
-        padding-bottom: 40px;
+        padding: 10px 40px 0 40px;
       }
     }
 
