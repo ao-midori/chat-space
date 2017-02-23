@@ -1,6 +1,7 @@
 .main-container
   .left-container
     = render partial: 'shared/leftbar'
+
   .right-container
     #group-info-box
       %p#group-info-box__name
@@ -13,13 +14,7 @@
           Edit
 
     #message-box
-    - @messages.each do |message|
-      %p#message-box__sender
-        = message.user.name
-        %span#message-box__datetime
-          = message.created_at.strftime("%Y-%m-%d %H:%M:%S")
-      %p#message-box__content
-        = message.body
+      = render partial: 'msg', collection: @messages
 
     #texting-box
       = form_for ([@group, @message])do |f|
