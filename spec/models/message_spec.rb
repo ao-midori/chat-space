@@ -4,15 +4,15 @@ describe Message do
   describe '#create' do
 
     it "is valid with a message" do
-      user = build(:message)
-      user.valid?
-      expect(user).to be_valid
+      message = build(:message)
+      message.valid?
+      expect(message).to be_valid
     end
 
     it "is invalid without a message" do
-      user = build(:message, body: "")
-      user.valid?
-      expect(user).not_to be_valid
+      message = build(:message, body: "")
+      message.valid?
+      expect(message).not_to be_valid
     end
 
   end
