@@ -14,7 +14,6 @@ describe MessagesController, type: :controller do
   end
 
   describe 'GET/POST #set_group' do
-
     it "assigns the requested contact to @group" do
       get :index, params: { group_id: group }
       expect(assigns(:group)).to eq group
@@ -22,7 +21,6 @@ describe MessagesController, type: :controller do
   end
 
   describe 'GET #index' do
-
     it "assigns the requested contact to @messages" do
       get :index, params: { group_id: group }
       messages = group.messages
@@ -39,11 +37,9 @@ describe MessagesController, type: :controller do
       get :index, params: { group_id: group }
       expect(response).to render_template :index
     end
-
   end
 
   describe 'POST #create' do
-
     context 'set @message approriate value' do
       it "save @message" do
         expect{ post :create, params: { group_id: group, message: message_params } }.to change(Message, :count).by(1)
