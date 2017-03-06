@@ -5,6 +5,7 @@
 .main-container {
   @include ref-height();
   @include ref-width();
+  @include clearfix();
 
   .left-container {
     @include ref-height();
@@ -37,22 +38,29 @@
       }
     }
 
-    #group-box {
+    #group-wrapper {
       background-color: $left-base;
-      padding: 20px;
+      height: calc( 100vh - 100px );
+      min-height: 600px;
+      overflow: auto;
 
-      &__name {
-        font-size: 15px;
-        padding-bottom: 5px;
-      }
-      &__message {
-        font-size: 11px;
-      }
-    }
+      #group-box {
+        background-color: $left-base;
+        padding: 20px;
 
-    #group-box a {
-      color: $white;
-      text-decoration: none !important;
+        &__name {
+          font-size: 15px;
+          padding-bottom: 5px;
+        }
+        &__message {
+          font-size: 11px;
+        }
+      }
+
+      #group-box a {
+        color: $white;
+        text-decoration: none !important;
+      }
     }
   }
 
