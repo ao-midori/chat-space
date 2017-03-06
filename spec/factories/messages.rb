@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :message do
-    body      "xxxxxxxx"
+    body    Faker::Friends.quote
   end
 end
