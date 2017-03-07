@@ -3,4 +3,7 @@
     #group-box__name
       = group.name
     #group-box__message
-      = group.messages.last.body.presence || ""
+      - if group.messages.present?
+        = group.messages.last.body
+      - else
+        = "No message"
