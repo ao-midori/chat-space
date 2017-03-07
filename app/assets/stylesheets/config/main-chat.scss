@@ -104,23 +104,29 @@
       }
     }
 
-    #message-box {
+    #message-wrapper {
+      height: calc( 100vh - 200px );
+      min-height: 500px;
+      overflow: auto;
 
-      &__sender {
-        font-size: 16px;
-        font-weight: bold;
-        padding: 40px 40px 0;
-      }
+      #message-box {
 
-      &__datetime {
-        color: $right-subinfo;
-        font-size: 12px;
-        padding-left: 10px;
-      }
+        &__sender {
+          font-size: 16px;
+          font-weight: bold;
+          padding: 40px 40px 0;
+        }
 
-      &__content {
-        font-size: 14px;
-        padding: 10px 40px 0 40px;
+        &__datetime {
+          color: $right-subinfo;
+          font-size: 12px;
+          padding-left: 10px;
+        }
+
+        &__content {
+          font-size: 14px;
+          padding: 10px 40px 0 40px;
+        }
       }
     }
 
@@ -153,7 +159,7 @@
       &__send-btn {
         background-color: $mainBlue;
         border-style: none;
-        color: #white;
+        color: $white;
         height: 50px;
         width: 90px;
         padding: 0 auto;

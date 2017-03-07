@@ -21,9 +21,9 @@
       = link_to edit_group_path(@group) do
         #group-info-box__edit-btn
           Edit
-
-    #message-box
-      = render partial: 'msg', collection: @messages
+    #message-wrapper
+      #message-box
+        = render partial: 'msg', collection: @messages
 
     #texting-box
       = form_for ([@group, @message])do |f|
