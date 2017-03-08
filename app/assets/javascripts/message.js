@@ -3,7 +3,7 @@ $(function() {
     console.log(input);
     var text = input.body;
     console.log(text);
-    var html = '<p id="message-box__sender">' + input.user.name + '<span id="message-box__datetime">' + input.created_at.strftime("%Y-%m-%d %H:%M:%S") + '</span></p>' + '<p id="message-box__content">' + input.body + '</p>';
+    var html = '<p id="message-box__sender">' + input.user.name + '<span id="message-box__datetime">' + input.created_at + '</span></p>' + '<p id="message-box__content">' + input.body + '</p>';
     return html;
   }
   $('#texting-form').on('submit', function(e) {
