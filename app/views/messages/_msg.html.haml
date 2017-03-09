@@ -1,6 +1,7 @@
-%p#message-box__sender
-  = msg.user.name
-  %span#message-box__datetime
-    = msg.created_at.to_s(:created_at)
-%p#message-box__content
-  = msg.body
+#message-box
+  %p#message-box__sender
+    = msg.user.name
+    %span#message-box__datetime
+      = msg.created_at.to_s(:created_at)
+  %p#message-box__content
+    = msg.body

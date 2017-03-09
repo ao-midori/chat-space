@@ -22,8 +22,7 @@
         #group-info-box__edit-btn
           Edit
     #message-wrapper
-      #message-box
-        = render partial: 'msg', collection: @messages
+      = render partial: 'msg', collection: @messages
 
     #texting-box
       = form_for([@group, @message], html: { id: "texting-form" }) do |f|

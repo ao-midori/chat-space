@@ -1,9 +1,6 @@
 $(function() {
   function buildHTML(input) {
-    console.log(input);
-    var text = input.body;
-    console.log(text);
-    var html = '<p id="message-box__sender">' + input.user.name + '<span id="message-box__datetime">' + input.created_at + '</span></p>' + '<p id="message-box__content">' + input.body + '</p>';
+    var html = '<div id="message-box">' + '<p id="message-box__sender">' + input.user.name + '<span id="message-box__datetime">' + input.created_at + '</span></p>' + '<p id="message-box__content">' + input.body + '</p>' + '</div>';
     return html;
   }
   $('#texting-form').on('submit', function(e) {
@@ -23,7 +20,6 @@ $(function() {
     })
     .done(function(data) {
       var html = buildHTML(data);
-      console.log(html);
       $('#message-wrapper').append(html);
       $('#texting-box__input').val('');
     })

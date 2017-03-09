@@ -110,11 +110,11 @@
       overflow: auto;
 
       #message-box {
+        padding: 20px 40px;
 
         &__sender {
           font-size: 16px;
           font-weight: bold;
-          padding: 40px 40px 0;
         }
 
         &__datetime {
@@ -125,7 +125,7 @@
 
         &__content {
           font-size: 14px;
-          padding: 10px 40px 0;
+          padding-top: 20px;
         }
       }
     }
