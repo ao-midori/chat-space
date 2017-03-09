@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
     if @message.save
       respond_to do |format|
         format.html { redirect_to group_messages_path }
-        format.json { render json: @message.to_json( include: { user: { only: :name } } ) }
+        format.json
       end
     else
       redirect_to group_messages_path, flash: { alert: "本文がないため、送信できませんでした。"}
