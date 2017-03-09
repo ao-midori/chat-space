@@ -1,6 +1,5 @@
 $(function() {
   function buildHTML(input) {
-    console.log(input);
     var html = '<div id="message-box">' + '<p id="message-box__sender">' + input.name + '<span id="message-box__datetime">' + input.created_at + '</span></p>' + '<p id="message-box__content">' + input.body + '</p>' + '</div>';
     return html;
   }
