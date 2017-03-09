@@ -22,11 +22,10 @@
         #group-info-box__edit-btn
           Edit
     #message-wrapper
-      #message-box
-        = render partial: 'msg', collection: @messages
+      = render partial: 'msg', collection: @messages
 
     #texting-box
-      = form_for ([@group, @message])do |f|
+      = form_for([@group, @message], html: { id: "texting-form" }) do |f|
         = f.text_field :body, placeholder: "type a message", size: "20", id: "texting-box__input"
         %i.fa.fa-picture-o#texting-box__photo-icon
         = f.submit value: "Send", id: "texting-box__send-btn"
