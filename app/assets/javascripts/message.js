@@ -22,6 +22,7 @@ $(function() {
       var html = buildHTML(data);
       $('#message-wrapper').append(html);
       $('#texting-box__input').val('');
+      $('#message-wrapper').animate({scrollTop: $('#message-wrapper')[0].scrollHeight}, 1000);
     })
     .fail(function() {
       alert('error');
