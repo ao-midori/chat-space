@@ -1,9 +1,9 @@
 $(function() {
   var preWord = "";
 
-  function appendList(name) {
-    var item = '<li class="list">' + name + '</li>';
-    $('#user-search-result').append(item);
+  function appendList(user) {
+    var item = `<li class="list" id="${user.id}">${user.name}</li>`;
+    $('.user-search-result').append(item);
   }
 
   function appendAddBtn() {
@@ -21,12 +21,11 @@ $(function() {
         data: { content : input },
         dataType: 'json'
       })
-
       .done(function(data) {
         $('.list').remove();
-        for ( var i in data.names ) {
-          appendList(data.names[i]);
-        }
+        $.each(data, function(i, user) {
+          appendList(user);
+        });
         appendAddBtn();
       })
 
