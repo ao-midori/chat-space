@@ -79,6 +79,12 @@
         padding: 15px;
         margin: 0 auto;
         border-bottom: 1px solid #ddd;
+
+        .chat-group-user__btn--add {
+          color: #38aef0;
+          float: right;
+          cursor: pointer;
+        }
       }
     }
   }

@@ -6,6 +6,11 @@ $(function() {
     $('#user-search-result').append(item);
   }
 
+  function appendAddBtn() {
+    var add_btn = '<span class="chat-group-user__btn--add">追加</span>'
+    $('.list').append(add_btn);
+  }
+
   $('#chat-group-form__user').on('keyup', function() {
     var input = $(this).val();
 
@@ -20,15 +25,15 @@ $(function() {
       .done(function(data) {
         $('.list').remove();
         for ( var i in data.names ) {
-          console.log(data.names[i]);
           appendList(data.names[i]);
         }
+        appendAddBtn();
       })
+
       .fail(function() {
       alert('error');
       });
     }
-
   });
 });
 
