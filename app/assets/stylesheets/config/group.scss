@@ -71,6 +71,16 @@
       padding: 10px 15px;
       box-sizing: border-box;
     }
+
+    #user-search-result {
+      clear: both;
+
+      .list {
+        padding: 15px;
+        margin: 0 auto;
+        border-bottom: 1px solid #ddd;
+      }
+    }
   }
 
   .chat-group-user {
