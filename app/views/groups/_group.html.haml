@@ -7,7 +7,7 @@
   .chat-group-form__field--left
     = f.label :チャットメンバーを追加, class: 'chat-group-form__label'
   .chat-group-form__field--right
-    = f.text_field :name, placeholder: "ユーザー名を入力してください", class: 'chat-group-form__input', id: 'chat-group-form__user'
+    %input.chat-group-form__input#chat-group-form__user{placeholder: "ユーザー名を入力してください", autocomplete: 'off'}
     %ul.user-search-result
 .chat-group-form__field.clearfix
   .chat-group-form__field--left
