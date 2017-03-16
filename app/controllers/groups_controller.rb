@@ -28,6 +28,14 @@ before_action :set_group, only: [:edit, :update]
     end
   end
 
+  def user_search
+    search_word = params[:content]
+    @users = User.where("name LIKE ?", "%" + search_word + "%")
+    respond_to do |format|
+      format.json
+    end
+  end
+
   private
   def group_user_params
     params.require(:group).permit(:name, :user_ids => [])

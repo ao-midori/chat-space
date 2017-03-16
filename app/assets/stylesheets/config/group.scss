@@ -71,30 +71,34 @@
       padding: 10px 15px;
       box-sizing: border-box;
     }
+
+    .user-search-result {
+      clear: both;
+
+      .list {
+        padding: 15px;
+        margin: 0 auto;
+        border-bottom: 1px solid #ddd;
+
+        .chat-group-user__btn--add {
+          color: #38aef0;
+          float: right;
+          cursor: pointer;
+        }
+      }
+    }
   }
 
   .chat-group-user {
-    @include clearfix();
-    padding: 0 15px;
-    line-height: 50px;
-    font-size: 14px;
-    border-bottom: 1px solid #ddd;
+    .list {
+      padding: 15px;
+      margin: 0 auto;
+      border-bottom: 1px solid #ddd;
 
-    .chat-group-user__name {
-      float: left;
-    }
-
-    .chat-group-user__btn {
-      float: right;
-      display: inline-block;
-      cursor: pointer;
-
-      &.chat-group-user__btn--add {
-        color: #38aef0;
-      }
-
-      &.chat-group-user__btn--remove {
+      .chat-group-user__btn--remove {
         color: #f05050;
+        float: right;
+        cursor: pointer;
       }
     }
   }
