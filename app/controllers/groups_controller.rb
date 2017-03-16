@@ -29,8 +29,8 @@ before_action :set_group, only: [:edit, :update]
   end
 
   def user_search
-    @serch_word = params[:content]
-    @users = User.where("name LIKE ?", "%" + @serch_word + "%")
+    search_word = params[:content]
+    @users = User.where("name LIKE ?", "%" + search_word + "%")
     respond_to do |format|
       format.json
     end
