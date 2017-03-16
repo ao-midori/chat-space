@@ -34,7 +34,7 @@ $(function() {
     var target = $(this).parent();
     var add_id = $(target).attr('user_id');
     var add_name = $(target).attr('user_name');
-    var add_item = `<li class="list select_member" user_id="${add_id}" user_name="${add_name}">${add_name}<span class="chat-group-user__btn--remove">削除</span></li>`;
+    var add_item = `<li class="list select_member" user_id="${add_id}" user_name="${add_name}">${add_name}<span class="chat-group-user__btn--remove">削除</span></li><input type="hidden", name="group[user_ids][]", value="${add_id}">`;
 
     $(target).remove();
     $('.chat-group-user').append(add_item);
