@@ -7,7 +7,6 @@ $(function() {
   }
 
   $(document).on('turbolinks:load', function() {
-
     $('#chat-group-form__user').on('keyup', function() {
       var input = $(this).val();
       if (input !== preInput && input.length !== 0) {
@@ -27,26 +26,25 @@ $(function() {
         alert('error');
         });
       }
-    });
-
-    $(document).on('click', '.chat-group-user__btn--add', function() {
-      var target = $(this).parent();
-      var add_id = $(target).attr('user_id');
-      var add_name = $(target).attr('user_name');
-      var add_item = `<li class="list select_member" user_id="${add_id}" user_name="${add_name}">${add_name}<span class="chat-group-user__btn--remove">削除</span></li>`;
-
-      $(target).remove();
-      $('.chat-group-user').append(add_item);
-    });
-
-    $(document).on('click', '.chat-group-user__btn--remove', function() {
-      var target = $(this).parent();
-      var remove_id = $(target).attr('user_id');
-      var remove_name = $(target).attr('user_name');
-
-      appendList(remove_id, remove_name);
-      $(target).remove();
+      preInput = input;
     });
   });
-});
 
+  $(document).on('click', '.chat-group-user__btn--add', function() {
+    var target = $(this).parent();
+    var add_id = $(target).attr('user_id');
+    var add_name = $(target).attr('user_name');
+    var add_item = `<li class="list select_member" user_id="${add_id}" user_name="${add_name}">${add_name}<span class="chat-group-user__btn--remove">削除</span></li>`;
+
+    $(target).remove();
+    $('.chat-group-user').append(add_item);
+  });
+
+  $(document).on('click', '.chat-group-user__btn--remove', function() {
+    var target = $(this).parent();
+    var remove_id = $(target).attr('user_id');
+    var remove_name = $(target).attr('user_name');
+
+    $(target).remove();
+  });
+});
