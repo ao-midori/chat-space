@@ -28,4 +28,5 @@
       = form_for([@group, @message], html: { id: "texting-form" }) do |f|
         = f.text_field :body, placeholder: "type a message", size: "20", id: "texting-box__input"
         %i.fa.fa-picture-o#texting-box__photo-icon
+        = f.file_field :image, id: "texting-box__photo-file"
         = f.submit value: "Send", id: "texting-box__send-btn"

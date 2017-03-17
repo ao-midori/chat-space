@@ -156,6 +156,10 @@
         right: 155px;
       }
 
+      &__photo-file {
+        display: none;
+      }
+
       &__send-btn {
         background-color: $mainBlue;
         border-style: none;
