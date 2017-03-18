@@ -154,12 +154,18 @@
         position: absolute;
         bottom: 35px;
         right: 155px;
+        cursor: pointer;
+      }
+
+      &__photo-file {
+        display: none;
       }
 
       &__send-btn {
         background-color: $mainBlue;
         border-style: none;
         color: $white;
+        cursor: pointer;
         height: 50px;
         width: 90px;
         padding: 0 auto;
