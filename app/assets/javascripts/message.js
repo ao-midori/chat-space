@@ -1,6 +1,6 @@
 $(function() {
   function buildHTML(input) {
-    var html = '<div id="message-box">' + '<p id="message-box__sender">' + input.name + '<span id="message-box__datetime">' + input.created_at + '</span></p>' + '<p id="message-box__content">' + input.body + '</p>' + '</div>';
+    var html = `<div id="message-box"><p id="message-box__sender">${input.name}<span id="message-box__datetime">${input.created_at}</span></p><p id="message-box__content">${input.body}</p><div id="message-box__image"><image src="${input.image}"></div>`;
     return html;
   }
   $('#texting-form').on('submit', function(e) {
