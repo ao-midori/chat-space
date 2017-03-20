@@ -8,16 +8,16 @@ CarrierWave.configure do |config|
       :provider               => 'AWS',
       :aws_access_key_id      =>  ENV['ACCESS_KEY_ID'],
       :aws_secret_access_key  => ENV['SECRET_ACCESS_KEY'],
-      :region                 => 'ap-northeast-1'
+      :region                 => ENV['REGION']
     }
 
     case Rails.env
     when 'development'
-        config.fog_directory  = 'tech-chat-dev'
-        config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/tech-chat-dev'
+        config.fog_directory  = ENV['DEV_DIRECTORY']
+        config.asset_host = ENV['DEV_HOST']
     when 'production'
-        config.fog_directory  = 'tech-chat-pro'
-        config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/tech-chat-pro'
+        config.fog_directory  = ENV['PRO_DIRECTORY']
+        config.asset_host = ENV['PRO_HOST']
     end
   end
 end
