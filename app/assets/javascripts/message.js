@@ -43,11 +43,6 @@ $(function() {
       });
     });
 
-    // photoアイコンクリックで画像選択
-    $('#texting-box__photo-icon').on('click', function() {
-      $('#texting-box__photo-file').click();
-    });
-
     // 最新メッセージの自動更新
     var url = document.location.pathname;
     var messagePolling;
