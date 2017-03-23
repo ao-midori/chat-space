@@ -1,34 +1,48 @@
 $(function() {
   function buildHTML(input) {
-    var html = `<div class="message-box"><p class="message-box__sender">${input.name}<span class="message-box__datetime">${input.created_at}</span></p><p class="message-box__content">${input.body}</p><div class="message-box__image"><image src=${input.image}></div>`;
-    return html;
+    var html = `<div class="message-box">
+                  <p class="message-box__sender">
+                    ${input.name}
+                    <span class="message-box__datetime">${input.created_at}</span>
+                  </p>
+                  <p class="message-box__content">
+                    ${input.body}
+                  </p>
+                <div class="message-box__image">`;
+    if (input.image != null) {
+      var html_pic = `<image src=${input.image}></div>`
+      return html + html_pic;
+    } else {
+      return html;
+    }
   }
 
-  $('#texting-form').on('submit', function(e) {
-    e.preventDefault();
-    var input_info = new FormData($('#texting-form')[0]);
-    var request_url = $(this).attr('action');
-
-    $.ajax({
-      type: 'POST',
-      url: request_url,
-      data: input_info,
-      processData: false,
-      contentType: false,
-      dataType: 'json',
-    })
-    .done(function(data) {
-      var html = buildHTML(data);
-      $('#message-wrapper').append(html);
-      $('#texting-box__input').val('');
-      $('#message-wrapper').animate({scrollTop: $('#message-wrapper')[0].scrollHeight}, 1000);
-    })
-    .fail(function() {
-      alert('error');
-    });
-  });
-
   $(document).on('turbolinks:load', function() {
+    // sendボタンで非同期通信
+    $('#texting-form').on('submit', function(e) {
+      e.preventDefault();
+      var input_info = new FormData($('#texting-form')[0]);
+      var request_url = $(this).attr('action');
+
+      $.ajax({
+        type: 'POST',
+        url: request_url,
+        data: input_info,
+        processData: false,
+        contentType: false,
+        dataType: 'json',
+      })
+      .done(function(data) {
+        var html = buildHTML(data);
+        $('#message-wrapper').append(html);
+        $('#texting-box__input').val('');
+        $('#message-wrapper').animate({scrollTop: $('#message-wrapper')[0].scrollHeight}, 1000);
+      })
+      .fail(function() {
+        alert('error');
+      });
+    });
+
     // photoアイコンクリックで画像選択
     $('#texting-box__photo-icon').on('click', function() {
       $('#texting-box__photo-file').click();
