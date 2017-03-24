@@ -20,7 +20,6 @@ $(function() {
   $(document).on('turbolinks:load', function() {
     // sendボタンで非同期通信
     $('#texting-form').on('submit', function(e) {
-      e.preventDefault();
       var input_info = new FormData($('#texting-form')[0]);
       var request_url = $(this).attr('action');
 
@@ -41,6 +40,7 @@ $(function() {
       .fail(function() {
         alert('error');
       });
+      return false;
     });
 
     // 最新メッセージの自動更新
