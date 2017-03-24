@@ -44,7 +44,7 @@
     @include clearfix();
     margin-top: 30px;
 
-    .chat-group-form__field--left {
+    &--left {
       float: left;
       width: 30%;
       padding-right: 20px;
@@ -52,7 +52,7 @@
       box-sizing: border-box;
     }
 
-    .chat-group-form__field--right {
+    &--right {
       float: right;
       width: 70%;
     }
@@ -76,9 +76,7 @@
       clear: both;
 
       .list {
-        padding: 15px;
-        margin: 0 auto;
-        border-bottom: 1px solid #ddd;
+        @include list();
 
         .chat-group-user__btn--add {
           color: #38aef0;
@@ -91,9 +89,7 @@
 
   .chat-group-user {
     .list {
-      padding: 15px;
-      margin: 0 auto;
-      border-bottom: 1px solid #ddd;
+      @include list();
 
       .chat-group-user__btn--remove {
         color: #f05050;
