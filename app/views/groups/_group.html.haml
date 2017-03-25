@@ -17,6 +17,9 @@
       %li.list
         = current_user.name
         %input{ type: "hidden", name: "group[user_ids][]", value: current_user.id }
+      - if @group.users
+        = render partial: 'members', collection: @members, as: "user"
+
 .chat-group-form__field.clearfix
   .chat-group-form__field--left
   .chat-group-form__field--right
