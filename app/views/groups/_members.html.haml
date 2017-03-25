@@ -1,0 +1,5 @@
+%li.list.select_member{ user_id: user.id, user_name: user.name }
+  = user.name
+  %span.chat-group-user__btn--remove
+    削除
+  %input{ type: "hidden", name: "group[user_ids][]", value: user.id }
